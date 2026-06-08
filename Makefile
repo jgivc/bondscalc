@@ -44,7 +44,8 @@ windows: windows-386 windows-amd64
 release: build-all
 	@echo "$(GREEN)Creating release archives...$(NC)"
 	@for file in $(BUILD_DIR)/*; do \
-		tar -czf $$file.tar.gz $$file config/config.yml; \
+		archname=`echo $$file | sed 's/\.exe//'`; \
+		`echo $$file | grep -q '.exe'` && zip -jq $$archname.zip $$file config/config.yml || tar -czf $$archname.tar.gz $$file config/config.yml; \
 	done
 
 .PHONY: clean
