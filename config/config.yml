@@ -1,0 +1,6 @@
+excel_path: "bonds.xlsx"
+input_sheet_name: "Sheet1"
+output_sheet_name: "Sheet2"
+broker_sell_fee_percent: 0.3
+exchange_sell_fee_percent: 0.085
+tax_rate_percent: 13.0
